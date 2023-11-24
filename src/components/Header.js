@@ -13,7 +13,7 @@ function Header() {
     <div>
       <nav className="navbar">
         <div className="logo">
-          <a href="nicolaspieri.net">
+          <a href="www.nicolaspieri.net">
             <img src={process.env.PUBLIC_URL + "/ampoule.jpg"} alt="Logo" />
             Nicolas Pieri
           </a>
