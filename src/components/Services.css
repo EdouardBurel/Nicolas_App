@@ -1,0 +1,214 @@
+/* Your CSS file */
+
+.services-main-container {
+  margin-bottom: 5rem;
+}
+.container-services {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: #8A0000;
+    transform: skewY(-4deg);
+    padding-bottom: 4rem;
+    /* Slightly rotate the bottom border */
+}
+
+.container-services-description {
+    width: 100vw;
+    transform: skewY(4deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;    /* Slightly rotate the bottom border */
+}
+
+.container-services-description h2 {
+    color: white;
+    font-size: 3em;
+    align-items:start;
+    font-family: 'Playball', cursive;
+
+    /* text-decoration: underline; */
+}
+
+.container-services-description span {
+    color: white;
+    margin: 1.5em;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.service-container {
+    border-radius: 25px;
+    margin-top: 2rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    background-color: white; /* White background for the service container */
+    display: flex;
+    flex-direction: row; /* Images aligned horizontally */
+    justify-content: center; /* Space between images */
+    padding: 5px; /* Adjust as needed */
+    height: auto;
+
+  }
+  
+  .service {
+    text-align: center; /* Center-align text within each service */
+    margin: 10px; /* Adjust as needed */
+  }
+
+  
+  .title-service h3 {
+    font-family: 'Lobster', sans-serif;
+    font-size: 1.6em;
+    min-height: 60px;
+  }
+
+  
+  img {
+    width: 100%;
+    height: 350px;
+  }
+
+  .img-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+  }
+
+  .hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(255, 0, 0, 0.5); /* Reddish background with opacity */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .title-responsive {
+    display: none;
+  }
+
+  .img-container:hover .hover-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+
+  @media (max-width: 1054px) { 
+    
+    .services-main-container {
+      margin-bottom: 3rem;
+    }
+    .service-container {
+      flex-direction: column;
+      width: 95%;
+    }
+
+    .img-container {
+      width: 100%;
+    }
+
+    .title-service h3 {
+      display: none;
+    }
+
+    .container-services-description span {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 1rem;
+  
+  }
+
+    .title-responsive {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      /* background: pink; */
+      color: white;
+      text-align: center;
+      border-radius: 25px;
+      font-size: 1.5rem;
+    }
+
+    .title-responsive h3 {
+      display: block;
+      color: #8A0000;
+      background-color: aliceblue;
+      opacity: 0.7;
+      line-height: 2rem;
+      font-family: 'Playball', cursive;
+
+    }
+
+    .img-container:hover .hover-text {
+      width: 100%;
+      font-size: 1rem;
+      opacity: 1;
+      padding-left: 1rem;
+    }
+    
+    .img-container:hover .title-responsive h3 {
+      display: none;
+    }
+
+    .service {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .title-service {
+      min-height: 50px;
+    }
+
+
+    .hover-text {
+      display: none;
+    }
+
+    .service-container img {
+      max-height: 100px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 25px
+      ;
+    }
+  }
+
+  @media (max-width: 650px) {
+
+    .services-main-container {
+      margin-bottom: 1rem;
+    }
+    .img-container:hover .hover-text {
+      font-size: 0.8rem;
+    }
+
+    .title-responsive h3 {
+      display: block;
+      color: #8A0000;
+      background-color: aliceblue;
+      opacity: 0.7;
+      line-height: 2rem;
+      font-size: 1.1em;
+    }
+  }

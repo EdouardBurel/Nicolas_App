@@ -1,0 +1,109 @@
+/* Your CSS file */
+
+.about-me-container{
+    margin-bottom: 5rem;
+}
+.main-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    transform: skewY(-4deg);
+    /* Slightly rotate the bottom border */
+}
+
+.main-description-container {
+    width: 80vw;
+    padding: 4rem;
+    transform: skewY(4deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 3rem;    /* Slightly rotate the bottom border */
+}
+
+.main-description-container h2 {
+    color: white;
+    font-size: 3em;
+    align-items:flex-start;
+    font-family: 'Playball', cursive;
+
+
+    /* text-decoration: underline; */
+
+}
+
+
+.main-description-container span {
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.main-description-container p {
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Lobster', sans-serif;
+
+}
+
+.section-1 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.picProfil {
+    transform: skewY(4deg);
+    margin-top: 6rem;
+    width: 30%;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center the content */
+}
+
+.picProfil img {
+    max-width: 90%;
+    height: auto;
+    /* max-height: 370px; */
+    /* Make the image responsive */
+}
+
+.picProfil h6 {
+    font-style: italic;
+    color: aliceblue;
+}
+
+@media (max-width: 1020px) {
+
+    .about-me-container{
+        margin-bottom: 3rem;
+    }
+    .main-container {
+        flex-direction: column;
+        /* Stack the containers vertically on smaller screens */
+    }
+
+    .main-description-container {
+        width: 100%;
+        font-size: 0.8rem;
+        /* Make the description container full width on smaller screens */
+    }
+
+    .picProfil {
+        width: 100%;
+        margin-top: 0;
+        /* Make the picProfil container full width on smaller screens */
+    }
+
+    /* To make the image full width in the text above it */
+    .picProfil img {
+        width: 70%;
+        /* Make the image full width on smaller screens */
+    }
+}

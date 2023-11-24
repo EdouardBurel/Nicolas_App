@@ -1,0 +1,126 @@
+/* src/components/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #373737;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+  }
+
+  .logo img {
+    width: 40px;
+    height: auto;
+  }
+
+  .logo a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+
+  .nav-links li {
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 20px;
+    font-size: 1.2em;
+    
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .nav-links li a:hover {
+    background-color: #8A0000;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .toggle-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .bar {
+    height: 4px;
+    width: 30px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .toggle-button {
+      display: flex;
+    }
+
+    .toggle-button.active .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+  
+    .toggle-button.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .toggle-button.active .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .nav-links li a:hover {
+      background-color: none;
+      padding: 0;
+      cursor: pointer;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #8A0000;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin: 0;
+      padding: 10px;
+      border-bottom: 1px solid;
+      text-align: center;
+    }
+
+    .nav-links li:last-child {
+      border-bottom: none; /* Remove the border on the last <li> */
+    }
+  }
+  
