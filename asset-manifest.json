@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Nicolas_App/static/css/main.f5f356f5.css",
+    "main.js": "/Nicolas_App/static/js/main.d4da76c0.js",
+    "static/js/787.d0ac4560.chunk.js": "/Nicolas_App/static/js/787.d0ac4560.chunk.js",
+    "index.html": "/Nicolas_App/index.html",
+    "main.f5f356f5.css.map": "/Nicolas_App/static/css/main.f5f356f5.css.map",
+    "main.d4da76c0.js.map": "/Nicolas_App/static/js/main.d4da76c0.js.map",
+    "787.d0ac4560.chunk.js.map": "/Nicolas_App/static/js/787.d0ac4560.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5f356f5.css",
+    "static/js/main.d4da76c0.js"
+  ]
+}
