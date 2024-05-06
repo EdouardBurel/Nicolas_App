@@ -212,3 +212,22 @@
       font-size: 1.1em;
     }
   }
+
+  @media (max-width: 450px) {
+
+    .services-main-container {
+      margin-bottom: 1rem;
+    }
+    .img-container:hover .hover-text {
+      font-size: 0.7rem;
+    }
+
+    .title-responsive h3 {
+      display: block;
+      color: #8A0000;
+      background-color: aliceblue;
+      opacity: 0.7;
+      line-height: 2rem;
+      font-size: 1.1em;
+    }
+  }
