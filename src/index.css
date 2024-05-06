@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.core-concept-item {
+  list-style: none;
+  text-align: center;
+}
+
+.concept-title {
+  font-size: 1rem; /* Adjust as needed */
+  margin-top: 10px;
+}
+
+/* Additional styles for the CarouselSkills component if needed */
+.skills {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.skill-slider {
+  margin-top: 20px;
+}
