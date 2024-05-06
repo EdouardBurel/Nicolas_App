@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.f5f356f5.css",
-    "main.js": "/static/js/main.e2140bac.js",
+    "main.css": "/static/css/main.081553cb.css",
+    "main.js": "/static/js/main.33a7becf.js",
     "static/js/787.d0ac4560.chunk.js": "/static/js/787.d0ac4560.chunk.js",
+    "static/media/eloquence.png": "/static/media/eloquence.1399effdfc2632ea8163.png",
+    "static/media/ballon.png": "/static/media/ballon.a9f850fb97b0003f9e40.png",
+    "static/media/catharsis.png": "/static/media/catharsis.ef960988dc3511f503da.png",
+    "static/media/jeuderoles.png": "/static/media/jeuderoles.3831c1bc2962b88537af.png",
+    "static/media/atelierGroupe.jpeg": "/static/media/atelierGroupe.33102e4cbac43ac2a0f8.jpeg",
     "index.html": "/index.html",
-    "main.f5f356f5.css.map": "/static/css/main.f5f356f5.css.map",
-    "main.e2140bac.js.map": "/static/js/main.e2140bac.js.map",
+    "main.081553cb.css.map": "/static/css/main.081553cb.css.map",
+    "main.33a7becf.js.map": "/static/js/main.33a7becf.js.map",
     "787.d0ac4560.chunk.js.map": "/static/js/787.d0ac4560.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5f356f5.css",
-    "static/js/main.e2140bac.js"
+    "static/css/main.081553cb.css",
+    "static/js/main.33a7becf.js"
   ]
 }
