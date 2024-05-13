@@ -15,7 +15,7 @@ function Main() {
             par l'improvisation théâtrale.
           </span>
           <span>
-            Je m'appelle Nicolas, et il y a près d'une décennie, j'ai entamé mon
+            Je m'appelle Nicolas, et en 2009, j'ai entamé mon
             voyage dans le monde de l'improvisation théâtrale. Depuis lors, je
             n'ai jamais renoncé à cette passion, cherchant constamment à
             apprendre des autres.
