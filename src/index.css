@@ -193,7 +193,7 @@ img {
 
 .hero__photo {
   position: relative;
-  max-width: 760px;
+  max-width: 1260px;
   margin: 0 auto 110px; /* extra space because the logo sticks out below */
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
 }
