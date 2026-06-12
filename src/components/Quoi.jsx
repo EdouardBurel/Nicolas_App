@@ -8,8 +8,7 @@ const ATELIERS = [
   {
     titre: "Initiation à la création de masque",
     image: "/images/creation-masque.jpg",
-    description:
-      "Fabriquer son propre masque, puis lui donner vie sur scène.",
+    description: "Fabriquer son propre masque, puis lui donner vie sur scène.",
   },
   {
     titre: "Full Concepts",
@@ -26,8 +25,7 @@ const ATELIERS = [
   {
     titre: "Stage d'éloquence",
     image: "/images/eloquence.jpg",
-    description:
-      "Voix, posture, présence : prendre la parole avec confiance.",
+    description: "Voix, posture, présence : prendre la parole avec confiance.",
   },
   {
     titre: "Ateliers",
@@ -48,12 +46,14 @@ export default function Quoi() {
 
         <div className="cartes">
           {ATELIERS.map((atelier) => (
-            <article className="carte" key={atelier.titre}>
+            <article className="carte" key={atelier.titre} tabIndex={0}>
               <div className="carte__cadre">
                 <img src={atelier.image} alt={atelier.titre} />
+                <div className="carte__voile">
+                  <p>{atelier.description}</p>
+                </div>
               </div>
               <h3>{atelier.titre}</h3>
-              <p>{atelier.description}</p>
             </article>
           ))}
         </div>

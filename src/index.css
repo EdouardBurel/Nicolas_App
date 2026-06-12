@@ -2,18 +2,18 @@
    TOKENS — change the whole site's look from here
    ============================================================ */
 :root {
-  --noir: #060505;            /* deepest stage black */
+  --noir: #060505; /* deepest stage black */
   --noir-voile: rgba(6, 5, 5, 0.62); /* veil over the background photo */
-  --rideau: #7a1f1f;          /* curtain red */
-  --braise: #d98445;          /* warm stage-light amber */
-  --halo: #9fd8d4;            /* cold spotlight teal (the two small lamps) */
-  --craie: #efe9df;           /* chalk-white text */
+  --rideau: #7a1f1f; /* curtain red */
+  --braise: #d98445; /* warm stage-light amber */
+  --halo: #9fd8d4; /* cold spotlight teal (the two small lamps) */
+  --craie: #efe9df; /* chalk-white text */
   --craie-douce: rgba(239, 233, 223, 0.72);
 
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Jost", "Segoe UI", sans-serif;
 
-  --largeur: 1080px;          /* max content width */
+  --largeur: 1080px; /* max content width */
 }
 
 * {
@@ -268,10 +268,84 @@ img {
 }
 
 .carte__cadre {
+  position: relative;
+  overflow: hidden;
   border: 1px solid rgba(217, 132, 69, 0.4);
   padding: 8px;
   background: rgba(6, 5, 5, 0.5);
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.carte:hover .carte__cadre,
+.carte:focus-visible .carte__cadre {
+  transform: translateY(-6px);
+  border-color: var(--braise);
+}
+
+.carte__cadre img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+.carte:hover .carte__cadre img,
+.carte:focus-visible .carte__cadre img {
+  transform: scale(1.04);
+  filter: brightness(0.45);
+}
+
+/* The curtain: rises from the bottom on hover */
+.carte__voile {
+  position: absolute;
+  inset: 8px; /* matches the frame padding */
+  display: flex;
+  align-items: flex-bottom;
+  justify-content: center;
+  padding: 24px 20px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    rgba(6, 5, 5, 0.92) 100%
+  );
+}
+
+.carte:hover .carte__voile,
+.carte:focus-visible .carte__voile {
+  opacity: 1;
+}
+
+.carte__voile p {
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--craie);
+  transform: translateY(12px);
+  transition: transform 0.35s ease;
+}
+
+.carte:hover .carte__voile p,
+.carte:focus-visible .carte__voile p {
+  transform: translateY(0);
+}
+
+.carte h3 {
+  margin-top: 18px;
+}
+
+.carte__cadre {
+  border: 1px solid rgba(217, 132, 69, 0.4);
+  padding: 8px;
+  background: rgba(6, 5, 5, 0.5);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .carte:hover .carte__cadre {
@@ -365,6 +439,11 @@ img {
   section {
     padding: 64px 0;
   }
+  .hero h1 {
+    position: static;
+    margin-bottom: 28px;
+    text-shadow: none;
+  }
   .qui__grille,
   .ou__grille {
     grid-template-columns: 1fr;
@@ -373,6 +452,15 @@ img {
     grid-template-columns: 1fr;
     max-width: 420px;
     margin: 0 auto;
+  }
+  .carte__voile {
+    opacity: 1;
+  }
+  .carte__voile p {
+    transform: none;
+  }
+  .carte__cadre img {
+    filter: brightness(0.55);
   }
   .entete__nav {
     gap: 16px;
@@ -385,5 +473,10 @@ img {
   }
   .carte:hover .carte__cadre {
     transform: none;
+  }
+  .carte__cadre img,
+  .carte__voile,
+  .carte__voile p {
+    transition: none;
   }
 }
