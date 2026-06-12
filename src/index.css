@@ -1,0 +1,389 @@
+/* ============================================================
+   TOKENS — change the whole site's look from here
+   ============================================================ */
+:root {
+  --noir: #060505;            /* deepest stage black */
+  --noir-voile: rgba(6, 5, 5, 0.62); /* veil over the background photo */
+  --rideau: #7a1f1f;          /* curtain red */
+  --braise: #d98445;          /* warm stage-light amber */
+  --halo: #9fd8d4;            /* cold spotlight teal (the two small lamps) */
+  --craie: #efe9df;           /* chalk-white text */
+  --craie-douce: rgba(239, 233, 223, 0.72);
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Jost", "Segoe UI", sans-serif;
+
+  --largeur: 1080px;          /* max content width */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--noir);
+  color: var(--craie);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   THE CONSTANT BACKGROUND
+   A fixed, full-screen layer behind everything.
+   (More reliable on mobile than background-attachment: fixed)
+   ============================================================ */
+.fond-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/images/fond-scene.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.fond-scene::after {
+  /* darkening veil so text stays readable everywhere */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    var(--noir-voile) 0%,
+    rgba(6, 5, 5, 0.45) 40%,
+    var(--noir-voile) 100%
+  );
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.contenu {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 96px 0;
+}
+
+/* Big theatrical section markers: QUI ? / QUOI ? / OÙ ? */
+.marqueur {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 1;
+  color: var(--craie);
+  text-shadow: 0 0 60px rgba(217, 132, 69, 0.25);
+  margin-bottom: 48px;
+}
+
+.marqueur--droite {
+  text-align: right;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+a {
+  color: var(--braise);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(6, 5, 5, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(239, 233, 223, 0.08);
+}
+
+.entete__barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: var(--largeur);
+  margin: 0 auto;
+}
+
+.entete__nom {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--craie);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.entete__logo {
+  height: 28px;
+  width: auto;
+}
+
+.entete__nav {
+  display: flex;
+  gap: 28px;
+}
+
+.entete__nav a {
+  color: var(--craie-douce);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.entete__nav a:hover,
+.entete__nav a:focus-visible {
+  color: var(--braise);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--braise);
+}
+
+.hero__photo {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto 110px; /* extra space because the logo sticks out below */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.hero__logo {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 45%); /* centered, hanging below the photo */
+  width: 140px;
+  box-shadow: none;
+}
+
+.hero p {
+  font-style: italic;
+  max-width: 46em;
+  margin: 0 auto;
+  color: var(--craie-douce);
+  font-size: 1.1rem;
+}
+
+/* ============================================================
+   QUI — bio with side photo
+   ============================================================ */
+.qui__grille {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.qui__texte p {
+  margin-bottom: 1.2em;
+  color: var(--craie-douce);
+}
+
+.qui__texte strong {
+  color: var(--craie);
+  font-weight: 500;
+}
+
+.qui__photo img {
+  border: 1px solid rgba(239, 233, 223, 0.15);
+}
+
+.qui__legende {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--craie-douce);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ============================================================
+   QUOI — cards grid
+   ============================================================ */
+.quoi__intro {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 56px;
+}
+
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.carte {
+  text-align: center;
+}
+
+.carte__cadre {
+  border: 1px solid rgba(217, 132, 69, 0.4);
+  padding: 8px;
+  background: rgba(6, 5, 5, 0.5);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.carte:hover .carte__cadre {
+  transform: translateY(-6px);
+  border-color: var(--braise);
+}
+
+.carte__cadre img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.carte h3 {
+  margin-top: 18px;
+}
+
+.carte p {
+  font-size: 0.95rem;
+  color: var(--craie-douce);
+}
+
+/* ============================================================
+   VALEURS — "L'improvisation, c'est…" list
+   ============================================================ */
+.valeurs {
+  text-align: center;
+}
+
+.valeurs h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.6rem;
+  margin-bottom: 32px;
+}
+
+.valeurs ul {
+  list-style: none;
+  max-width: 44em;
+  margin: 0 auto;
+}
+
+.valeurs li {
+  font-style: italic;
+  color: var(--craie-douce);
+  padding: 6px 0;
+}
+
+.valeurs li + li {
+  border-top: 1px solid rgba(239, 233, 223, 0.07);
+}
+
+/* ============================================================
+   OÙ + CONTACT
+   ============================================================ */
+.ou__grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.ou__carte {
+  width: 220px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.contact p {
+  margin-bottom: 8px;
+}
+
+.pied {
+  border-top: 1px solid rgba(239, 233, 223, 0.08);
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--craie-douce);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 820px) {
+  section {
+    padding: 64px 0;
+  }
+  .qui__grille,
+  .ou__grille {
+    grid-template-columns: 1fr;
+  }
+  .cartes {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .entete__nav {
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .carte:hover .carte__cadre {
+    transform: none;
+  }
+}
