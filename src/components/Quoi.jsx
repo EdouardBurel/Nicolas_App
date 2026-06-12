@@ -39,14 +39,14 @@ export default function Quoi() {
   return (
     <section id="quoi">
       <div className="contenu">
-        <h2 className="marqueur">QUOI&nbsp;?</h2>
-        <p className="quoi__intro">
+        <h2 className="marqueur reveal">QUOI&nbsp;?</h2>
+        <p className="quoi__intro reveal">
           Animation d'ateliers et de stages à thématique
         </p>
 
         <div className="cartes">
           {ATELIERS.map((atelier) => (
-            <article className="carte" key={atelier.titre} tabIndex={0}>
+            <article className="carte reveal" key={atelier.titre} tabIndex={0}>
               <div className="carte__cadre">
                 <img src={atelier.image} alt={atelier.titre} />
                 <div className="carte__voile">

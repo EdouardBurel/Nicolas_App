@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="contenu">
-        <div className="hero__photo">
+        <div className="hero__photo reveal">
           <h1>
             L'expression de soi,
             <br />
@@ -17,7 +17,7 @@ export default function Hero() {
           <img className="hero__logo" src="/images/logo.png" alt="" />
         </div>
 
-        <p>
+        <p className="reveal">
           Accepter de lâcher prise pour libérer notre esprit et notre
           personnalité est une démarche précieuse. Grâce à divers stages et
           ateliers, nous aurons l'opportunité de mettre en lumière les talents

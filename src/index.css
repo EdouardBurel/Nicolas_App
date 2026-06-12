@@ -433,6 +433,39 @@ img {
 }
 
 /* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered entrance for the 6 cards */
+.cartes .carte:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.cartes .carte:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.cartes .carte:nth-child(4) {
+  transition-delay: 0.1s;
+}
+.cartes .carte:nth-child(5) {
+  transition-delay: 0.2s;
+}
+.cartes .carte:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 820px) {
@@ -477,6 +510,12 @@ img {
   .carte__cadre img,
   .carte__voile,
   .carte__voile p {
+    transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
     transition: none;
   }
 }

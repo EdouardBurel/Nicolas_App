@@ -12,8 +12,10 @@ export default function Valeurs() {
   return (
     <section className="valeurs">
       <div className="contenu">
-        <h2>L'improvisation, sous toutes ces formes, c'est&nbsp;:</h2>
-        <ul>
+        <h2 className="reveal">
+          L'improvisation, sous toutes ces formes, c'est&nbsp;:
+        </h2>
+        <ul className="reveal">
           {VALEURS.map((valeur) => (
             <li key={valeur}>{valeur}</li>
           ))}

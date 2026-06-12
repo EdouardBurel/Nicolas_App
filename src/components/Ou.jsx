@@ -2,10 +2,10 @@ export default function Ou() {
   return (
     <section id="contact">
       <div className="contenu">
-        <h2 className="marqueur marqueur--droite">OÙ&nbsp;?</h2>
+        <h2 className="marqueur marqueur--droite reveal">OÙ&nbsp;?</h2>
 
         <div className="ou__grille">
-          <div className="contact">
+          <div className="contact reveal">
             <h2>Contact</h2>
             <p>
               <a href="mailto:nicolaspieri35@gmail.com">
@@ -21,7 +21,7 @@ export default function Ou() {
           <div>
             {/* Replace with your France/Périgord map image */}
             <img
-              className="ou__carte"
+              className="ou__carte reveal"
               src="/images/carte.png"
               alt="Carte de France situant le Périgord"
             />

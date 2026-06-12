@@ -2,10 +2,10 @@ export default function Qui() {
   return (
     <section id="qui">
       <div className="contenu">
-        <h2 className="marqueur marqueur--droite">QUI&nbsp;?</h2>
+        <h2 className="marqueur marqueur--droite reveal">QUI&nbsp;?</h2>
 
         <div className="qui__grille">
-          <div className="qui__texte">
+          <div className="qui__texte reveal">
             <p>
               Je m'appelle <strong>Nicolas</strong>, et en 2009, j'ai entamé
               mon voyage dans le monde de l'improvisation théâtrale. Depuis
