@@ -498,7 +498,7 @@ img {
     margin: 0 auto;
   }
   .carte__voile {
-    opacity: 1;
+    opacity: 0.4;
   }
   .carte__voile p {
     transform: none;
