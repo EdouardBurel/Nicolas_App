@@ -299,21 +299,17 @@ img {
   filter: brightness(0.45);
 }
 
-/* The curtain: rises from the bottom on hover */
+/* The curtain: centered overlay on hover */
 .carte__voile {
   position: absolute;
-  inset: 8px; /* matches the frame padding */
+  inset: 8px;
   display: flex;
-  align-items: flex-bottom;
+  align-items: center;
   justify-content: center;
   padding: 24px 20px;
   opacity: 0;
   transition: opacity 0.35s ease;
-  background: linear-gradient(
-    180deg,
-    transparent 30%,
-    rgba(6, 5, 5, 0.92) 100%
-  );
+  background: rgba(6, 5, 5, 0.72);
 }
 
 .carte:hover .carte__voile,
@@ -321,13 +317,17 @@ img {
   opacity: 1;
 }
 
+/* Single-line description (paragraph) */
 .carte__voile p {
+  font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.02rem;
-  line-height: 1.55;
+  font-weight: 500;
+  font-size: 1.32rem;
+  line-height: 1.7;
   color: var(--craie);
   transform: translateY(12px);
   transition: transform 0.35s ease;
+  letter-spacing: 0.02em;
 }
 
 .carte:hover .carte__voile p,
@@ -335,37 +335,48 @@ img {
   transform: translateY(0);
 }
 
-.carte h3 {
-  margin-top: 18px;
-}
-
-.carte__cadre {
-  border: 1px solid rgba(217, 132, 69, 0.4);
-  padding: 8px;
-  background: rgba(6, 5, 5, 0.5);
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.carte:hover .carte__cadre {
-  transform: translateY(-6px);
-  border-color: var(--braise);
-}
-
-.carte__cadre img {
+/* Multi-line description (bulleted list) */
+.carte__liste {
+  list-style: none;
+  text-align: left;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.carte__liste li {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--craie);
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+  letter-spacing: 0.01em;
+  transform: translateY(12px);
+  transition: transform 0.35s ease;
+}
+
+.carte:hover .carte__liste li,
+.carte:focus-visible .carte__liste li {
+  transform: translateY(0);
+}
+
+.carte__liste li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--braise);
+}
+
+.carte__liste li:only-child::before {
+  content: "";
 }
 
 .carte h3 {
   margin-top: 18px;
-}
-
-.carte p {
-  font-size: 0.95rem;
-  color: var(--craie-douce);
 }
 
 /* ============================================================

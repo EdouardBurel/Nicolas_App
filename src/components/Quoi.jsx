@@ -1,37 +1,51 @@
 const ATELIERS = [
   {
-    titre: "Stage de théâtre masqué",
+    titre: "Stage 'Masques'",
     image: "/images/masque.jpg",
-    description:
-      "Masque plein et demi-masque : le corps raconte ce que le visage ne dit plus.",
+    description: [
+      "Sur deux journées, explorez une approche de l'improvisation avec le masque plein puis le demi-masque. Découvrez les personnages qui vivent en vous et laissez-vous porter par leur regard dans un univers riche de partage et de rencontres... parfois burlesque !",
+    ],
   },
   {
     titre: "Initiation à la création de masque",
     image: "/images/creation-masque.jpg",
-    description: "Fabriquer son propre masque, puis lui donner vie sur scène.",
+    description: [
+      "Sur une ou deux journées, apprenez à créer votre masque avec Emilie V. et donnez-leur vie à travers des mises en situation et des jeux d'improvisation.",
+    ],
   },
   {
     titre: "Full Concepts",
     image: "/images/concepts.jpg",
-    description:
-      "Des formats longs et immersifs : Étapes, Portraits, Témoin, Orages…",
+    description: [
+      "En l'espace d'un week-end, découvrez différents univers à travers des improvisations longues : tantôt proches du jeu de rôle grandeur nature, tantôt immergées dans l'ambiance d'un film aux enjeux stratégiques. Approfondissez les relations entre les personnages et enrichissez leur construction. Écrivez votre propre histoire !",
+    ],
   },
   {
     titre: "Jeux de rôles",
     image: "/images/jdr.jpg",
-    description:
-      "Enquêtes et histoires partagées où chacun incarne un personnage.",
+    description: [
+      "Création d'un jeu de rôle sur table fait sur mesure",
+      "Compter un mois, préavis à faire ensemble par téléphone.",
+      "Création de jeux de pistes et de Murder Party",
+    ],
   },
   {
-    titre: "Stage d'éloquence",
+    titre: "Stage d'Éloquence",
     image: "/images/eloquence.jpg",
-    description: "Voix, posture, présence : prendre la parole avec confiance.",
+    description: [
+      "Structurer sa parole avec clarté",
+      "Développer sa spontanéité",
+      "Travailler l'impact vocal et corporel",
+      "Gagner en confiance à l'oral",
+    ],
   },
   {
     titre: "Ateliers",
     image: "/images/ateliers.jpg",
-    description:
-      "Des séances régulières pour progresser ensemble, dans la bonne humeur.",
+    description: [
+      "En fonction des groupes, ateliers sur mesure d'au moins 2h.",
+      "Ponctuels ou hebdomadaires (à voir en fonction des disponibilités)",
+    ],
   },
 ];
 
@@ -50,7 +64,11 @@ export default function Quoi() {
               <div className="carte__cadre">
                 <img src={atelier.image} alt={atelier.titre} />
                 <div className="carte__voile">
-                  <p>{atelier.description}</p>
+                  <ul className="carte__liste">
+                    {atelier.description.map((ligne, idx) => (
+                      <li key={idx}>{ligne}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
               <h3>{atelier.titre}</h3>
